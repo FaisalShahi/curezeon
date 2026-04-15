@@ -23,6 +23,7 @@ document.querySelectorAll('.fade-up').forEach((section) => observer.observe(sect
 navToggle?.addEventListener('click', () => {
   const expanded = navToggle.getAttribute('aria-expanded') === 'true';
   navToggle.setAttribute('aria-expanded', String(!expanded));
+  navToggle.classList.toggle('open');
   nav.classList.toggle('open');
 });
 
