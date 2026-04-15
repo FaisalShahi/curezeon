@@ -76,7 +76,13 @@ body {
 
 .site-logo {
   display: block;
-  max-height: 54px;
+  max-height: 70px;
+  width: auto;
+}
+
+.site-text-logo {
+  display: block;
+  max-height: 34px;
   width: auto;
 }
 
@@ -332,13 +338,17 @@ body {
 }
 
 .card-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
 }
 
 .product-card {
   overflow: hidden;
+  flex: 1 1 calc((100% - 4rem) / 3);
+  min-width: 260px;
+  max-width: 380px;
 }
 
 .product-card img {
@@ -615,11 +625,15 @@ body {
   .contact-grid {
     grid-template-columns: 1fr;
   }
-  .hero-benefits {
+  .hero-benefits,
+  .feature-list {
     grid-template-columns: 1fr;
   }
   .product-card img {
     min-height: 220px;
+  }
+  .product-card {
+    flex: 1 1 calc((100% - 2rem) / 2);
   }
 }
 
@@ -642,6 +656,9 @@ body {
   }
   .nav-toggle {
     display: inline-flex;
+  }
+  .product-card {
+    flex: 1 1 100%;
   }
   .site-nav {
     position: absolute;
@@ -675,9 +692,6 @@ body {
   }
   .card-grid {
     grid-template-columns: 1fr;
-  }
-  .product-card img {
-    display: none;
   }
   .product-card {
     min-height: auto;

@@ -38,7 +38,17 @@ nav?.querySelectorAll('a').forEach((link) => {
   link.addEventListener('click', () => {
     if (nav.classList.contains('open')) {
       nav.classList.remove('open');
+      navToggle?.classList.remove('open');
       navToggle?.setAttribute('aria-expanded', 'false');
     }
   });
+});
+
+document.addEventListener('click', (event) => {
+  const target = event.target;
+  if (nav?.classList.contains('open') && !nav.contains(target) && !navToggle.contains(target)) {
+    nav.classList.remove('open');
+    navToggle?.classList.remove('open');
+    navToggle?.setAttribute('aria-expanded', 'false');
+  }
 });
